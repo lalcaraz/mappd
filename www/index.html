@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,700,700italic,500italic' rel='stylesheet' type='text/css'>
+    <title>mappd</title>
+
+    <script src="components/loader.js"></script>
+    <script src="lib/onsenui/js/onsenui.js"></script>
+
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="js/leaflet.css" type="text/css" media="all" />
+	<script src="js/leaflet.js"></script>
+    <script src="js/offlinemap.js"></script>
+	<script>
+		ons.ready(function() {
+			
+		});
+	</script>
+</head>
+
+<body>
+	<ons-splitter>
+		<ons-splitter-side var="userMenu" page="menu.html" side="left" width="80%" collapse swipeable></ons-splitter-side>
+		<ons-splitter-side var="mapsMenu" page="maplist.html" side="right" width="80%" collapse swipeable></ons-splitter-side>
+		<ons-splitter-content page="content.html"></ons-splitter-content>
+	</ons-splitter>
+
+	<ons-template id="content.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-toolbar-button ng-click="userMenu.open()">
+	            		<ons-icon icon="md-menu"></ons-icon>
+	          		</ons-toolbar-button>
+	        	</div>
+	      		<div class="center">Mappd</div>
+	      		<div class="right">
+					<ons-toolbar-button ng-click="mapsMenu.open()">
+	            		<ons-icon icon="map"></ons-icon>
+	          		</ons-toolbar-button>
+	        	</div>
+      		</ons-toolbar>
+      		<div id="map" style="width:100%; height:100%;"></div>
+    	</ons-page>
+  	</ons-template>
+  
+  	<ons-template id="menu.html">
+  		<ons-page>
+			<ons-list>
+				<ons-list-header>Menu</ons-list-header>
+				<ons-list-item> This is a menu. </ons-list-item>
+			</ons-list>
+		</ons-page>
+	</ons-template>
+
+	<ons-template id="maplist.html">
+  		<ons-page>
+			<ons-list>
+				<ons-list-header>Menu</ons-list-header>
+				<ons-list-item> This is a map list. </ons-list-item>
+			</ons-list>
+		</ons-page>
+  </ons-template>
+</body>
+</html>
